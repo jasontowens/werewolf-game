@@ -1,0 +1,55 @@
+{
+  "users": {
+    "DogPan": { //user should only see their own stats in their browser; active user sorted at top of list, or in separate list 
+      "name": "Dog Pan",
+      "contacts": { "DogPot", "FlowAhPla", "CatCit", "BlueButNotYou"} //removed as they die? 
+	  "isWolf": true,
+	  "specials": { "Alpha": true},
+    "privileges": { "village", "wolf"}
+    },
+    
+	  //these should be non-existent client-side, blank, or only populated with data that the mod deems public, if that were to occur
+    //alternatively they could be used as a reference for communication. e.g. wolves would receive who the other wolves are
+    "GodPot": { "isWolf": false },
+    "FlowAhPla": {"isWolf": true},
+    "CatCit":{"isWolf":false},
+    "BlueButNotYou":{"isWolf":false}
+  }
+  "chats": {
+    "village":{
+      "day1:"{
+        "m1": {
+          "name": "CatCit",
+          "message": "The relay seems to be malfunctioning. We're all alone out here, and the mountain base can't see or hear us.",
+          "timestamp": 1459361875337
+        },
+        "m2": {
+          "name": "BlueButNotYou",
+          "message": "I can't believe they would leave us out here. Especially with this virus that's been turning people into those... things",
+          "timestamp": 1459361875342"
+        },
+        //etc. as list goes on, only load most recent 50 or so messages. Load more as user scrolls up? TBD
+    }
+    "wolf":{ //only sent to people with isWolf == true
+      "m1": {
+        "name": "DogPan",
+        "message": "We should kill Jason first. He smells bad and doesn't have good taste in 18th century candelabras.",
+        "timestamp": 1459361875300
+      },
+      "m2": {
+        "name": "FlowAhPla",
+        "message": "I agree, but how can we tell who Jason is when all of the names are anonymized?", 
+        "timestamp": 1459361879000
+      }
+    }
+  }
+  "evidence":{
+    //I'm thinking a map of users to messages by message id, so each person can keep personal evidence on each other person
+    // I think this is superior to a village evidence locker as that's basically the village chat and it's sometimes beneficial 
+    // to withold information from the village until just the right time. Going to leave this blank for now, though.
+  
+  }
+  "graveyard":{
+    //who's dead, what they were. Should be empty at start of game. 
+  }
+}
